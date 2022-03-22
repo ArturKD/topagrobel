@@ -4,3 +4,4 @@ function toggle(){
     activeMenu.classList.toggle('active')
 }
 menu.addEventListener('click', toggle);
+
