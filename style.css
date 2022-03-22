@@ -1,3 +1,9 @@
+/*
+Theme Name: Topagrobel
+Author: Dima Sobolevski, Artur Koshal
+Text Domain: Topagrobel
+*/
+
 :root {
     --background-white: #ffffff;
     --text-gray:        #bcbec0;
@@ -25,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
     background-color: var(--background-white);
+    margin-top: 0 !important;
 }
 body {
     height: 100%;
@@ -76,12 +83,12 @@ body {
     display: none;
 }
 
-.navigation-button {
+#navigation-button {
     margin: 1rem 1rem 0 0;
     margin-left: auto;
 }
 
-.navigation-button .menu-button {
+#navigation-button #menu-button {
     background: transparent;
     float:      left;
     position:   relative;
@@ -92,7 +99,7 @@ body {
     border:  0;
     padding: 0;
 }
-.navigation-button .menu-button span {
+#navigation-button #menu-button span {
     display:  block;
     margin:   0 auto;
     position: relative;
@@ -108,12 +115,12 @@ body {
     box-shadow:    0 0 2px rgb(0 0 0);
 }
 
-.navigation-button.active .menu-button span {
+#navigation-button.active #menu-button span {
     transition-delay: 0s;
     background-color: rgba(255, 255, 255, 0);
     box-shadow:       none;
 }
-.navigation-button .menu-button span:before, .navigation-button .menu-button span:after {
+#navigation-button #menu-button span:before, #navigation-button #menu-button span:after {
     content: '';
     position: absolute;
     display:  block;
@@ -124,24 +131,24 @@ body {
     box-shadow: 0 0 2px rgb(0 0 0);
 }
 
-.navigation-button.active .menu-button span:before {
+#navigation-button.active #menu-button span:before {
     transform: rotate(45deg);
     transition: transform 0.2s ease-in-out;
     margin-top: 0;
     box-shadow: none;
 }
-.navigation-button.active .menu-button span:after {
+#navigation-button.active #menu-button span:after {
     transform: rotate(-45deg);
     transition: transform 0.2s ease-in-out;
     margin-top: 0;
     box-shadow: none;
 }
-.navigation-button .menu-button span:before {
+#navigation-button #menu-button span:before {
     transition: margin 0.2s ease-in-out;
     transition-delay: 0.2s;
     margin-top: -14px;
 }
-.navigation-button .menu-button span:after {
+#navigation-button #menu-button span:after {
     transition: margin 0.2s ease-in-out;
     transition-delay: 0.2s;
     margin-top: 14px;
