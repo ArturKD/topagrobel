@@ -216,32 +216,34 @@ ul {
     margin-top: -14px;
 }
 .navigation-button .menu-button span:after {
-    transition: margin 0.2s ease-in-out;
+    transition:       margin 0.2s ease-in-out;
     transition-delay: 0.2s;
-    margin-top: 14px;
+    margin-top:       14px;
 }
 
 .menu-active .menu-overlay{
-    opacity: 1;
-    -webkit-transform:scale(20);
-    transform:scale(20);
+    opacity:           1;
+    -webkit-transform: scale(20);
+    transform:         scale(20);
     -webkit-transition:opacity ease-in 0.5s, -webkit-transform ease-in 0.25s;
-    visibility: visible;
+    visibility:        visible;
 }
 
 .main {
-    position: center;
-    display: flex;
+    position:       center;
+    display:        flex;
     flex-direction: column;
 
 }
 /*--------------------------------------------- carousel ----------------------------------------------*/
 
 .carousel {
-    height:         100vh;
-    display:        flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    height:           100vh;
+    display:          flex;
+    flex-direction:   column;
+    justify-content:  flex-end;
+    background-color: var(--black);
+    overflow:         hidden;
     content: "";
     top:     0;
     bottom:  0;
@@ -413,25 +415,26 @@ ul {
     font-style: normal;
 }
 .quote-buttons {
-    display: flex;
+    display:   flex;
     flex-wrap: wrap;
 }
 .button {
-    background: #ffd200;
-    text-align: center;
-    padding: 1rem 5rem;
-    border-radius: 4px;
-    margin: 10px;
+    background:      #ffd200;
+    text-align:      center;
+    padding:         1rem 5rem;
+    border-radius:   4px;
+    margin:          10px;
     text-decoration: none;
-    cursor: pointer;
-    border: 5px solid transparent;
-    font-weight: normal;
-    font-family: industry, sans-serif;
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    color: var(--black);
-    transition: ease 0.5s;
+    cursor:          pointer;
+    border:          5px solid transparent;
+    font-weight:     normal;
+    font-family:     industry, sans-serif;
+    font-style:      normal;
+    font-size:       1.5rem;
+    line-height:     2rem;
+    color:           var(--black);
+    transition:      ease 0.5s;
+    min-width:       260px;
 }
 
 .button:hover {
