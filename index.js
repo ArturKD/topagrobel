@@ -32,7 +32,7 @@ function carouselToggle(event) {
 }
 
 function carouselSlideRemove() {
-    carouselNavigation.forEach(element => element.classList.remove('active'));
+    carouselNavigation.forEach((element) => element.classList.remove('active'));
     carouselBackground.forEach(element => element.classList.remove('active'));
     carouselSubText.forEach(element => element.classList.remove('active'));
     carouselTitle.forEach(element => element.classList.remove('active'));
@@ -54,13 +54,13 @@ let timeoutCarousel = setInterval(carouselTimer, 10000);
 
 function carouselTimer() {
     if(targetIndex < targetLength) {
+        carouselSlideRemove();
+        carouselSlideActivate();
         targetIndex += 1;
-        carouselSlideRemove();
-        carouselSlideActivate();
     } else {
-        targetIndex = 0;
         carouselSlideRemove();
         carouselSlideActivate();
+        targetIndex = 0;
     }
 }
 function clearTimer() {
@@ -126,11 +126,34 @@ function carouselSwipeLeft() {
     }
 };
 
+//---------------------------------- animation ----------------------------------//
+
+const column = document.querySelectorAll('.column');
+
+const imageGalleryObserver = new IntersectionObserver( entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            column.forEach(element => element.classList.add('active'));
+        }
+    })
+});
+const statObserver = new IntersectionObserver( entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    })
+});
+
+//---------------------------------- dark carousel ----------------------------------//
+
+
 //---------------------------------- listeners ----------------------------------//
 
 carouselNavigationContainer.addEventListener('click', carouselToggle);
 menu.addEventListener('click', toggleMenu);
-window.addEventListener('load', carouselSlideActivate);
 window.addEventListener('load', carouselTimer);
 carousel.addEventListener('touchstart', handleTouches);
 carousel.addEventListener('touchmove', handleMove);
+imageGalleryObserver.observe(document.querySelector('.column'));
+statObserver.observe(document.querySelector('.stat'));

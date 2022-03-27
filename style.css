@@ -343,7 +343,7 @@ ul {
     line-height: 1.5rem;
     color: var(--black);
     animation-name: fromRight;
-    animation-duration: 1s;
+    animation-duration: 1.4s;
 }
 .carousel-button.active {
     display: inline-block;
@@ -355,9 +355,10 @@ ul {
     z-index: 1;
     margin: 0 var(--margin);
 }
+
 .nav-links {
     box-sizing: border-box;
-    border-top: 2px solid #ffd200;
+    border-top: 2px solid var(--yellow);
     text-align: center;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -383,12 +384,21 @@ ul {
 }
 .nav-link:hover {
     color: var(--yellow);
-    border-top: 5px solid;
 }
 .nav-link.active {
     color: var(--yellow);
     pointer-events: none;
     border-top: 5px solid;
+}
+.indicator {
+    display: block;
+    /*position: absolute;*/
+    top: -3px;
+    left: 0;
+    height: 5px;
+    background: #ff0026;
+    transition: all 0.5s;
+    z-index: 9;
 }
 /*--------------------------------------------- white block ----------------------------------------------*/
 .white-blockx {
@@ -434,7 +444,7 @@ ul {
     line-height:     2rem;
     color:           var(--black);
     transition:      ease 0.5s;
-    min-width:       260px;
+    min-width:       310px;
 }
 
 .button:hover {
@@ -469,7 +479,11 @@ ul {
     padding: 2rem 0 2rem 1rem;
     border-left: 5px solid var(--yellow);
 }
-/*--------------------------------------------- video section ----------------------------------------------*/
+.stat.active {
+    animation-name: fromTop;
+    animation-duration: 2s;
+}
+    /*--------------------------------------------- video section ----------------------------------------------*/
 .billboard {
     margin: 50px 0;
     position: page;
@@ -589,6 +603,12 @@ ul {
     width: 100%;
     height: 100%;
 }
+
+.column.active {
+    animation-name: popImage;
+    animation-duration: 1s;
+}
+
 .gallery-button {
     text-align: center;
 }
@@ -630,21 +650,42 @@ ul {
     align-content: center;
 }
 .dark-container h3 {
-    font-size: 2.5vw;
+    font-size: 1.5rem;
     text-align: center;
     color: var(--background-white);
 }
 .dark-container p {
     text-align: center;
+    font-size: 1rem;
     color: var(--background-white);
 }
 .dark-carousel {
+    display: none;
     align-self: center;
-    width: 30vw;
-    height: 30vw;
+    max-width: 400px;
+    max-height: 400px;
+    width: 80vw;
+    height: 80vw;
     background: var(--black);
     text-align: center;
     margin: 70px;
+    opacity: 0.5;
+    left: 50%;
+    z-index: 0;
+}
+.dark-carousel.active {
+    display: block;
+    position: inherit;
+    align-self: center;
+    max-width: 400px;
+    max-height: 400px;
+    width: 80vw;
+    height: 80vw;
+    background: var(--black);
+    text-align: center;
+    margin: 70px;
+    opacity: 1;
+    z-index: 2;
 }
 /*--------------------------------------------- news ----------------------------------------------*/
 .news {
@@ -655,7 +696,7 @@ ul {
 }
 .news-container h3 {
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 1.5rem;
 }
 .news-row {
     margin-top: 50px;
@@ -1020,11 +1061,11 @@ ul {
         opacity: 1;
     }
 }
-@keyframes backgroundClose {
-    from {
-        opacity: 1;
+@keyframes popImage {
+    0% {
+        transform: scale(0, .025);
     }
-    to {
-        opacity: 0;
+    50% {
+        transform: scale(1, .025);
     }
 }
