@@ -45,12 +45,12 @@ function carouselSlideActivate() {
     carouselSubText[targetIndex].classList.add('active');
     carouselTitle[targetIndex].classList.add('active');
     carouselButtons[targetIndex].classList.add('active');
-    window.clearInterval;
+    clearTimer();
 }
 
 //---------------------------------- carousel timer ----------------------------------//
 
-let timeoutCarousel = 10000;
+let timeoutCarousel = setInterval(carouselTimer, 10000);
 
 function carouselTimer() {
     if(targetIndex < targetLength) {
@@ -62,6 +62,10 @@ function carouselTimer() {
         carouselSlideRemove();
         carouselSlideActivate();
     }
+}
+function clearTimer() {
+    clearInterval(timeoutCarousel);
+    timeoutCarousel = setInterval(carouselTimer, 10000);
 }
 
 //---------------------------------- carousel swipe ----------------------------------//
@@ -127,6 +131,6 @@ function carouselSwipeLeft() {
 carouselNavigationContainer.addEventListener('click', carouselToggle);
 menu.addEventListener('click', toggleMenu);
 window.addEventListener('load', carouselSlideActivate);
-window.setInterval(carouselTimer, timeoutCarousel);
+window.addEventListener('load', carouselTimer);
 carousel.addEventListener('touchstart', handleTouches);
 carousel.addEventListener('touchmove', handleMove);
