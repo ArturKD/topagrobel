@@ -134,6 +134,9 @@ const imageGalleryObserver = new IntersectionObserver( entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             column.forEach(element => element.classList.add('active'));
+            column.forEach((element, index) => {
+                element.style.backgroundImage = 'url(./assets/img/gallery/photo-'+`${index}`+'.jpg)'; //Background image for gallery
+            })
         }
     })
 });
@@ -146,6 +149,9 @@ const statObserver = new IntersectionObserver( entries => {
 });
 
 //---------------------------------- dark carousel ----------------------------------//
+
+
+//---------------------------------- Preloads ----------------------------------//
 
 
 //---------------------------------- listeners ----------------------------------//
