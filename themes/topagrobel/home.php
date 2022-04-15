@@ -121,13 +121,13 @@ get_header(); ?>
         </section>
         <section class="billboard">
             <div class="billboard-container">
-                <h3>Beautiful title for video section</h3>
+                <h3><?php echo get_field('video_title'); ?></h3>
                 <div class="video">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LVzrGSGAFHs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="<?php echo get_field('main_page_video'); ?>" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="billboard-content">
-                <p>Are you ready to make an impact? We know you’re not just looking for a job. You want an adventure — to do something that makes a real impact on the world around you. You want more opportunity, cutting-edge training, meaningful responsibilities from Day One, and you never settle for second best. That’s what you’ll find here at Kiewit. So if you’re looking for more than a job, look no further.</p>
+                <p><?php echo get_field('main_description'); ?></p>
                 <div class="video-buttons">
                     <a>Button1</a>
                     <a>Button2</a>
@@ -138,7 +138,8 @@ get_header(); ?>
         <section class="projects">
             <div class="projects-container">
                 <h3>Text for projects title</h3>
-                <div class="projects-display">
+                <?php echo do_shortcode(get_field('main_page_gallery')); ?>
+                <!--<div class="projects-display">
                     <div class="column">Image</div>
                     <div class="column">Image</div>
                     <div class="column">Image</div>
@@ -148,9 +149,9 @@ get_header(); ?>
                     <div class="column">Image</div>
                     <div class="column">Image</div>
                     <div class="column">Image</div>
-                </div>
+                </div>-->
                 <p class="gallery-button">
-                    <a>Button for gallery</a>
+                    <a href="#">Button for gallery</a>
                 </p>
             </div>
         </section>

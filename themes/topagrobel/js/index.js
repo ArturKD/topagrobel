@@ -156,7 +156,7 @@ const statObserver = new IntersectionObserver( entries => {
 
 //---------------------------------- listeners ----------------------------------//
 
-carouselNavigationContainer.addEventListener('click', carouselToggle);
+/*carouselNavigationContainer.addEventListener('click', carouselToggle);*/
 menu.addEventListener('click', toggleMenu);
 window.addEventListener('load', carouselTimer);
 carousel.addEventListener('touchstart', handleTouches);

@@ -15,31 +15,25 @@
                     </ul>
                 </div>
                 <div class="col-links">
-                    <h5>Text</h5>
-                    <ul>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                    </ul>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'footer_main',
+                        'container' => 'div',
+                        'container_class' => 'navigation-columns',
+                        'menu_class' => 'navigation-menu',
+                        'walker'         => new Topagrobel_walker()
+                    ]); ?>
                 </div>
                 <div class="svg">
                     <?php echo get_logo_img(); ?>
                 </div>
                 <div class="col-links">
-                    <h5>Text</h5>
-                    <ul>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                        <li><a>text</a></li>
-                    </ul>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'sub_footer_main-1',
+                        'container' => 'div',
+                        'container_class' => 'navigation-columns',
+                        'menu_class' => 'navigation-menu',
+                        'walker'         => new Topagrobel_walker()
+                    ]); ?>
                 </div>
                 <div class="col-links">
                     <h5>Text</h5>

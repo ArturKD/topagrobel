@@ -20,10 +20,12 @@ function topagrobel_theme_setup(){
     add_theme_support( 'block-templates' );
     register_nav_menus([
         'primary' => __('Primary Menu', 'topagrobel'),
-        'sub_menu-1' => __('Sub Menu Col 1', 'topagrobel'),
-        'sub_menu-2' => __('Sub Menu Col 2', 'topagrobel'),
-        'sub_menu-3' => __('Sub Menu Col 3', 'topagrobel'),
-        'sub_menu-4' => __('Sub Menu Col 4', 'topagrobel'),
+        'sub_menu-1' => __('Sub Main Menu Col 1', 'topagrobel'),
+        'sub_menu-2' => __('Sub Main Menu Col 2', 'topagrobel'),
+        'sub_menu-3' => __('Sub Main Menu Col 3', 'topagrobel'),
+        'sub_menu-4' => __('Sub Main Menu Col 4', 'topagrobel'),
+        'footer_main' => __('Footer Main Menu', 'topagrobel'),
+        'sub_footer_main-1' => __('Sub Footer Main Menu 1', 'topagrobel'),
         ]);
     require_once get_template_directory().'/custom_functional/requried_custom_scripts.php';
 }
